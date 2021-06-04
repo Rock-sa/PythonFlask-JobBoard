@@ -14,7 +14,7 @@ def open_connection():
 
 def execute_sql(sql,values = (),commit = False,single = False):
     connection = open_connection()
-    cursor = execute(sql, values)
+    cursor = connection.execute(sql, values)
     if commit is True:
         results = connection.commit()
     else:
