@@ -1,5 +1,4 @@
-{% macro nav_link(endpoint, text) %}
-{% macro show_job(job) -%}
+{% macro show_job(job) %}
 <!-- show_job -->
 <div class="card adjust-height">
   <header class="card-header">
@@ -19,12 +18,13 @@
     </div>
   </div>
 </div>
-{%- endmacro %}
-{% macro show_jobs(jobs) -%}
+{% endmacro %}
+{% macro show_jobs(jobs) %}
 <div class="columns is-multiline">
-  {% for n in jobs %}
+  {% for job in jobs %}
         <div class="column is-half">
+          {{ show_job(job) }}
         </div>
   {% endfor %}
 </div>
-{%- endmacro %}
+{% endmacro %}
